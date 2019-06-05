@@ -38,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
                 calcTheTip(Double.valueOf(tipPercentEditText.getText().toString().substring(7))    /100.0);
             }
         });
+        
 
 
     }
