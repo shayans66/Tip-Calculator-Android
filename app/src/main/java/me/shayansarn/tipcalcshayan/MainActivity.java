@@ -12,11 +12,9 @@ public class MainActivity extends AppCompatActivity {
     TextView tipTotalTextView;
     TextView totalTextView;
     EditText billTotalEditText;
+    EditText tipPercentEditText;
 
-    Button tenPercentButton;
-    Button fifteenPercentButton;
-    Button twentyPercentButton;
-
+    Button calculateButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,38 +25,29 @@ public class MainActivity extends AppCompatActivity {
         //tipTotalTextView.setText("Why hello there");
         totalTextView = findViewById(R.id.totalTextView);
         billTotalEditText = findViewById(R.id.billTotalEditText);
+        tipPercentEditText = findViewById(R.id.tipPercentEditText);
+        calculateButton = findViewById(R.id.calculateButton);
 
-        tenPercentButton = findViewById(R.id.tenButton);
-        fifteenPercentButton = findViewById(R.id.twentyButton);
-        twentyPercentButton = findViewById(R.id.thirtyButton);
+        //tenPercentButton = findViewById(R.id.tenButton);
+        //fifteenPercentButton = findViewById(R.id.twentyButton);
+        //twentyPercentButton = findViewById(R.id.thirtyButton);
 
-        tenPercentButton.setOnClickListener(new View.OnClickListener() {
+        calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcTheTip(0.1);
+                calcTheTip(Double.valueOf(tipPercentEditText.getText().toString().substring(7))    /100.0);
             }
         });
 
-        fifteenPercentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calcTheTip(0.15);
-            }
-        });
-        twentyPercentButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                calcTheTip(0.2);
-            }
-        });
 
     }
 
+    // tippercentatge = 20
     public void calcTheTip(Double tipPercentage){
         // Determine the Tip
         //double tip = 0.10 * billTotalEditText.get
 
-        Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
+        Double billTotal = Double.valueOf(billTotalEditText.getText().toString() );
         Double tipTotal = billTotal * tipPercentage;
 
         // Display tip
@@ -76,7 +65,7 @@ public class MainActivity extends AppCompatActivity {
 
         // Display total
 
-        String roundedTotal = String.format("%.2f", tipTotal);
+        String roundedTotal = String.format("%.2f", total);
 
         totalTextView.setText("Tip - $"+roundedTotal);
 

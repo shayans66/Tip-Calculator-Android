@@ -34,27 +34,22 @@
         android:layout_height="55dp"
         android:orientation="horizontal">
 
-        <Button
-            android:id="@+id/tenButton"
-            android:layout_width="0dp"
+        <EditText
+            android:id="@+id/tipPercentEditText"
+            android:layout_width="296dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="10%" />
-
-        <Button
-            android:id="@+id/twentyButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="15%" />
-
-        <Button
-            android:id="@+id/thirtyButton"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="20%" />
+            android:ems="10"
+            android:gravity="center|center_horizontal"
+            android:inputType="textPersonName"
+            android:text="Tip %: " />
     </LinearLayout>
+
+    <Button
+        android:id="@+id/calculateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate" />
 
     <TextView
         android:id="@+id/tipTotalTextView"
