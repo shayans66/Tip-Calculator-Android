@@ -16,7 +16,7 @@
         android:textSize="24sp" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/billTotalEditText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -35,21 +35,21 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/tenButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="10%" />
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/twentyButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="15%" />
 
         <Button
-            android:id="@+id/button5"
+            android:id="@+id/thirtyButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -57,7 +57,7 @@
     </LinearLayout>
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tipTotalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tip - $0.00"
@@ -65,11 +65,18 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/totalTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total - $0.00"
         android:textSize="24sp"
         android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:srcCompat="@android:drawable/star_big_on" />
+
 
 </LinearLayout>
