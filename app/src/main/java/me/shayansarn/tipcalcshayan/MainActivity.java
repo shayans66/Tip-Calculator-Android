@@ -35,73 +35,50 @@ public class MainActivity extends AppCompatActivity {
         tenPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Determine the Tip
-                    //double tip = 0.10 * billTotalEditText.get
-
-                Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
-                Double tipTotal = billTotal * 0.10;
-
-                // Display tip
-
-                tipTotalTextView.setText("Tip - $"+tipTotal);
-
-
-
-                // Determine total
-
-                Double total = billTotal + tipTotal
-
-                // Display total
-                totalTextView.setText("Tip - $"+total);
+                calcTheTip(0.1);
             }
         });
 
         fifteenPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Determine the Tip
-                //double tip = 0.10 * billTotalEditText.get
-
-                Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
-                Double tipTotal = billTotal * 0.15;
-
-                // Display tip
-
-                tipTotalTextView.setText("Tip - $"+tipTotal);
-
-
-
-                // Determine total
-
-                Double total = billTotal + tipTotal
-
-                // Display total
-                totalTextView.setText("Tip - $"+total);
+                calcTheTip(0.15);
             }
         });
         twentyPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Determine the Tip
-                //double tip = 0.10 * billTotalEditText.get
-
-                Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
-                Double tipTotal = billTotal * 0.20;
-
-                // Display tip
-
-                tipTotalTextView.setText("Tip - $"+tipTotal);
-
-
-
-                // Determine total
-
-                Double total = billTotal + tipTotal
-
-                // Display total
-                totalTextView.setText("Tip - $"+total);
+                calcTheTip(0.2);
             }
         });
+
+    }
+
+    public void calcTheTip(Double tipPercentage){
+        // Determine the Tip
+        //double tip = 0.10 * billTotalEditText.get
+
+        Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
+        Double tipTotal = billTotal * tipPercentage;
+
+        // Display tip
+
+            // round the tipTotal
+        String roundedTip = String.format("%.2f", tipTotal);
+
+        tipTotalTextView.setText("Tip - $"+roundedTip);
+
+
+
+        // Determine total
+
+        Double total = billTotal + tipTotal;
+
+        // Display total
+
+        String roundedTotal = String.format("%.2f", tipTotal);
+
+        totalTextView.setText("Tip - $"+roundedTotal);
 
     }
 }
