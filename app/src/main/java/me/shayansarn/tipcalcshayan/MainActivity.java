@@ -39,13 +39,67 @@ public class MainActivity extends AppCompatActivity {
                     //double tip = 0.10 * billTotalEditText.get
 
                 Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
-
+                Double tipTotal = billTotal * 0.10;
 
                 // Display tip
 
+                tipTotalTextView.setText("Tip - $"+tipTotal);
+
+
+
                 // Determine total
 
+                Double total = billTotal + tipTotal
+
                 // Display total
+                totalTextView.setText("Tip - $"+total);
+            }
+        });
+
+        fifteenPercentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Determine the Tip
+                //double tip = 0.10 * billTotalEditText.get
+
+                Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
+                Double tipTotal = billTotal * 0.15;
+
+                // Display tip
+
+                tipTotalTextView.setText("Tip - $"+tipTotal);
+
+
+
+                // Determine total
+
+                Double total = billTotal + tipTotal
+
+                // Display total
+                totalTextView.setText("Tip - $"+total);
+            }
+        });
+        twentyPercentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Determine the Tip
+                //double tip = 0.10 * billTotalEditText.get
+
+                Double billTotal = Double.parseDouble(billTotalEditText.getText().toString() );
+                Double tipTotal = billTotal * 0.20;
+
+                // Display tip
+
+                tipTotalTextView.setText("Tip - $"+tipTotal);
+
+
+
+                // Determine total
+
+                Double total = billTotal + tipTotal
+
+                // Display total
+                totalTextView.setText("Tip - $"+total);
             }
         });
 
