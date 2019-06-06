@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         //tenPercentButton = findViewById(R.id.tenButton);
         //fifteenPercentButton = findViewById(R.id.twentyButton);
         //twentyPercentButton = findViewById(R.id.thirtyButton);
-
+        //
         calculateButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         tenPercentButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                calcTheTip(Double.valueOf(0.10));
+                calcTheTip(0.10);
             }
         });
 
@@ -66,8 +66,6 @@ public class MainActivity extends AppCompatActivity {
                 calcTheTip(0.20);
             }
         });
-
-
 
 
     }
