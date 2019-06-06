@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
     EditText tipPercentEditText;
 
     Button calculateButton;
+    Button tenPercentButton;
+    Button fifteenPercentButton;
+    Button twentyPercentButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,7 +29,11 @@ public class MainActivity extends AppCompatActivity {
         totalTextView = findViewById(R.id.totalTextView);
         billTotalEditText = findViewById(R.id.billTotalEditText);
         tipPercentEditText = findViewById(R.id.tipPercentEditText);
+
         calculateButton = findViewById(R.id.calculateButton);
+        tenPercentButton = findViewById(R.id.tenPercentButton);
+        twentyPercentButton = findViewById(R.id.twentyPercentButton);
+        fifteenPercentButton = findViewById(R.id.fifteenPercentButton);
 
         //tenPercentButton = findViewById(R.id.tenButton);
         //fifteenPercentButton = findViewById(R.id.twentyButton);
@@ -38,12 +45,39 @@ public class MainActivity extends AppCompatActivity {
                 calcTheTip(Double.valueOf(tipPercentEditText.getText().toString().substring(7))    /100.0);
             }
         });
-        
+
+        tenPercentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcTheTip(Double.valueOf(0.10));
+            }
+        });
+
+        fifteenPercentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcTheTip(Double.valueOf(0.15));
+            }
+        });
+
+        twentyPercentButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                calcTheTip(0.20);
+            }
+        });
+
+
 
 
     }
 
-    // tippercentatge = 20
+
+    /**
+     * Changes the TipTextView and the TotalTextView to the appropriate values
+     * @param tipPercentage
+     * Is a decimal value, not percentage value (0.15, 0.2, etc)
+     */
     public void calcTheTip(Double tipPercentage){
         // Determine the Tip
         //double tip = 0.10 * billTotalEditText.get
